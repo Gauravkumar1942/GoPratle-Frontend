@@ -222,11 +222,14 @@ export default function GoPratlePostingFlow() {
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/requirements", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/requirements`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        },
+      );
 
       const data = await res.json();
       if (!res.ok || !data.success) {
@@ -246,8 +249,8 @@ export default function GoPratlePostingFlow() {
     try {
       const url =
         filter === "all"
-          ? "/api/requirements"
-          : `/api/requirements?category=${filter}`;
+          ? `${process.env.NEXT_PUBLIC_API_URL}/api/requirements`
+          : `${process.env.NEXT_PUBLIC_API_URL}/api/requirements?category=${filter}`;
       const res = await fetch(url);
       const data = await res.json();
       if (data.success) {
