@@ -1,8 +1,12 @@
-# GoPratle-Frontend
-This repo has the frontend of the GoPratle  Event Data
+# GoPratle Event Data - Frontend
 
-#To run the frontend part 
+This repository contains the frontend code for the GoPratle Event Data project.
 
-cd frontend 
+## Getting Started
+
+To run the frontend locally, execute the following commands in your terminal:
+
+```bash
+cd frontend
 npm install
 npm run dev
